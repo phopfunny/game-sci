@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧬 เกมชีววิทยาสุ่ม</title>
+    <link rel="stylesheet" href="color.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🌿 เกมชีววิทยาสุ่ม 🧬</h1>
+
+        <div id="setup" class="active">
+            <label>🕐 ระบุเวลาที่ต้องการเล่น (วินาที):</label>
+            <input type="number" id="durationInput" min="1" value="30">
+            <button onclick="startGame()">🚀 เริ่มเกม</button>
+        </div>
+
+        <div id="game">
+            <div id="timer">⏰ เหลือเวลา: <span id="timeLeft"></span> วินาที</div>
+            <div id="message"></div>
+            <button class="answer-btn yes-btn" onclick="handleAnswer('ถูก')">✅ ถูก</button>
+            <button class="answer-btn no-btn" onclick="handleAnswer('ข้าม')">❌ ข้าม</button>
+        </div>
+
+        <div id="end">
+            <h2>🏁 หมดเวลาแล้ว!</h2>
+            <h3>📊 สรุปคำตอบของคุณ:</h3>
+            <div class="summary-section">
+                <strong>🟢 ตอบว่า "ถูก":</strong>
+                <ul id="yesList"></ul>
+            </div>
+            <div class="summary-section">
+                <strong>🔴 ตอบว่า "ข้าม":</strong>
+                <ul id="noList"></ul>
+            </div>
+            <button onclick="location.reload()">🔄 เล่นใหม่</button>
+        </div>
+    </div>
+</body>
+</html>
